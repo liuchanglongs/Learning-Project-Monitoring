@@ -3,21 +3,21 @@ import {
   onLoadPerformanceFMP,
   errorInit,
   instrumentDOMEvents,
-  instrumentFetch,
-} from "./utils";
-(() => {
-  colllectWebVitals();
-  onLoadPerformanceFMP();
-  errorInit();
+  instrumentFetch
+} from './utils'
+;(() => {
+  colllectWebVitals()
+  onLoadPerformanceFMP()
+  errorInit()
   // instrumentDOMEvents();
-  instrumentFetch();
-})();
+  instrumentFetch()
+})()
 const App = () => {
   return (
     <div>
       <button
         onClick={() => {
-          fn();
+          fn()
         }}
       >
         全局错误捕获
@@ -25,7 +25,7 @@ const App = () => {
 
       <button
         onClick={() => {
-          Promise.reject("onunhandledrejection-->");
+          Promise.reject('onunhandledrejection-->')
         }}
       >
         onunhandledrejection
@@ -33,21 +33,21 @@ const App = () => {
 
       <button
         onClick={() => {
-          console.log("this", this);
+          console.log('this', this)
 
-          fetch("/ll")
+          fetch('/ll')
             .then((res) => {
-              console.log(res);
+              console.log(res)
             })
             .catch((err) => {
-              console.log(err);
-            });
+              console.log(err)
+            })
         }}
       >
         instrumentFetch
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

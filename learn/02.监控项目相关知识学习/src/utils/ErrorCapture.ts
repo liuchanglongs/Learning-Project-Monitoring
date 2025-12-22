@@ -1,9 +1,9 @@
 export const errorInit = () => {
   window.onerror = (msg: any) => {
-    console.log("window.onerror:", msg);
-  };
+    console.log('window.onerror:', msg)
+  }
 
   window.onunhandledrejection = (msg: any) => {
-    console.log("window.onunhandledrejection:", msg);
-  };
-};
+    console.log('window.onunhandledrejection:', msg)
+  }
+}

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import * as Sentry from "@sentry/react";
-import "./App.css";
+import { useEffect, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import * as Sentry from '@sentry/react'
+import './App.css'
 Sentry.init({
-  dsn: "https://fa01d3d2df23c4fc9965c8a95227dd02@o4510567683194880.ingest.de.sentry.io/4510567748665424",
+  dsn: 'https://fa01d3d2df23c4fc9965c8a95227dd02@o4510567683194880.ingest.de.sentry.io/4510567748665424',
   // 设置跟踪采样率, 介于 0.0 到 1.0 之间
   tracesSampleRate: 1.0,
   // For example, automatic IP address collection on events
@@ -18,15 +18,15 @@ Sentry.init({
     Sentry.breadcrumbsIntegration(),
     // 录制用户交互、DOM 快照和回放，重现用户操作流以复现前端 bug（通常作为附加产品/包引入）。
     Sentry.replayIntegration({
-      maskAllText: false,
-    }),
+      maskAllText: false
+    })
   ],
   // Session Replay
   replaysSessionSampleRate: 0.1, // This sets the sample rate at 10%. You may want to change it to 100% while in development and then sample at a lower rate in production.
-  replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
-});
+  replaysOnErrorSampleRate: 1.0 // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
+})
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -45,14 +45,14 @@ function App() {
         </button>
         <button
           onClick={() => {
-            throw new Error("This is your first error!");
+            throw new Error('This is your first error!')
           }}
         >
           Break the world
         </button>
         <button
           onClick={() => {
-            setCount1(5);
+            setCount1(5)
           }}
         >
           Error
@@ -65,7 +65,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
