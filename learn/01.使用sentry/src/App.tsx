@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import * as Sentry from '@sentry/react'
 import './App.css'
+
+import * as Sentry from '@sentry/react'
+import { useState } from 'react'
+
+import viteLogo from '/vite.svg'
+
+import reactLogo from './assets/react.svg'
+
 Sentry.init({
   dsn: 'https://fa01d3d2df23c4fc9965c8a95227dd02@o4510567683194880.ingest.de.sentry.io/4510567748665424',
   // 设置跟踪采样率, 介于 0.0 到 1.0 之间

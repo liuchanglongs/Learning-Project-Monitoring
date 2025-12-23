@@ -28,7 +28,9 @@ export default defineConfig([
     rules: {
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
-      'no-console': 'error'
+      // 'no-console': 'error',
+      'no-console': 'off', // 学习的时候使用
+      '@typescript-eslint/no-explicit-any': 'off'
     }
   }
 ])
