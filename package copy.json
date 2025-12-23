@@ -9,6 +9,7 @@
     "prettier": "prettier --write .",
     "spellcheckOld": "cspell lint . --exclude .git --exclude node_modules --exclude dist --exclude build",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(learn|packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
+    "prepare": "husky",
     "commit": "cz"
   },
   "keywords": [
@@ -28,24 +29,36 @@
       "path": "node_modules/cz-git"
     }
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{html,css,scss,md}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx,html,css,scss,md}": [
+      "cspell lint"
+    ]
+  },
   "devDependencies": {
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
-    "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.1",
-    "commitizen": "^4.3.1",
-    "cspell": "^8.14.4",
-    "cz-git": "^1.10.1",
     "eslint": "^9.39.1",
-    "eslint-config-prettier": "^10.1.8",
+    "@eslint/js": "^9.39.1",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "fast-glob": "^3.3.3",
-    "globals": "^16.5.0",
-    "lint-staged": "^15.2.10",
     "prettier": "^3.7.4",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.4"
+    "eslint-config-prettier": "^10.1.8",
+    "cspell": "^8.14.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "commitizen": "^4.3.1",
+    "cz-git": "^1.10.1",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0"
   }
 }

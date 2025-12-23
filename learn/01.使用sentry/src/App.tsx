@@ -27,7 +27,9 @@ Sentry.init({
 })
 function App() {
   const [count, setCount] = useState(0)
-
+  console.log('helo world')
+  const lcl = 'hhhh'
+  console.log(lcl)
   return (
     <>
       <div>
