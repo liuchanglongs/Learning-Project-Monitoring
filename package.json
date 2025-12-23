@@ -9,7 +9,8 @@
     "prettier": "prettier --write .",
     "spellcheckOld": "cspell lint . --exclude .git --exclude node_modules --exclude dist --exclude build",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(learn|packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
-    "commit": "cz"
+    "commit": "cz",
+    "prepare": "husky install"
   },
   "keywords": [
     "monitoring",
@@ -27,6 +28,22 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --cache --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "prettier --cache --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --cache --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --cache --parser=typescript --write"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
@@ -46,6 +63,7 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.7.4",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.4"
+    "typescript-eslint": "^8.46.4",
+    "husky": "^8.0.0"
   }
 }
