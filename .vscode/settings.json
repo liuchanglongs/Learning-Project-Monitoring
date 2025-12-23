@@ -1,0 +1,8 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 设置 Prettier 作为默认格式化器
+  "editor.formatOnSave": true, // 启用保存时自动格式化
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit" // 仅在保存时自动修复 ESLint 错误
+  },
+  "prettier.requireConfig": true // 仅在项目根目录存在 Prettier 配置文件时才启用格式化
+}
