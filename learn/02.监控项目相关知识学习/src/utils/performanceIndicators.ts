@@ -1,4 +1,4 @@
-import { onFCP, onINP, onCLS, onLCP, onTTFB } from 'web-vitals'
+import { onCLS, onFCP, onINP, onLCP, onTTFB } from 'web-vitals'
 
 const performancesData = {
   fcp: null,

@@ -1,9 +1,8 @@
 import {
   colllectWebVitals,
-  onLoadPerformanceFMP,
   errorInit,
-  instrumentDOMEvents,
-  instrumentFetch
+  instrumentFetch,
+  onLoadPerformanceFMP
 } from './utils'
 ;(() => {
   colllectWebVitals()
